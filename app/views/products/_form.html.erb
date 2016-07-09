@@ -1,0 +1,9 @@
+ <%= simple_form_for @product do |f| %>
+      <%= f.input :name, placeholder: "Name", label: "which product?" %>
+      <%= f.input :tagline, placeholder: "Short resume", label: "which tigline?" %>
+      <%= f.input :url, as: :url, label: "which url?", input_html: { value: "http://" } %>
+      <%= f.input :description, as: :text, placeholder: "long resume", label: "description" %>
+      <%= f.input :category, collection: ["Analyse_tools", "Biology", "CFD","Chemitry", "DATA_Analytics", "Design_3D", "Education", "Energy", "Food", "IT", "Material", "Mathematic", "Process_Simulation", "Schema_2D", "Sizing", "Tech"], prompt:"which category?" %>
+      <%= f.input :photo, as: :attachinary %>
+      <%= f.button :submit, "Add", class: "btn btn-primary" %>
+  <% end %>
