@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
       if params[:category]
       @products = Product.where(category: params[:category])
       else
-      @products = Product.all
+      @products = Product.all.sort_by{|product| product.upvotes.size}.reverse
       end
   end
 
@@ -52,8 +52,8 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :url, :tagline, :description, :category, :photo)
   end
   def profil
-     
+
       @products = Product.where(category: params[:category])
-     
+
   end
 end

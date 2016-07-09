@@ -108,6 +108,9 @@ a.product-upvote{
   border-bottom-color: #5898f1;
 }
 .product:hover {
-  background: #5898f1;
+  background: #ecf0f1;
   cursor: pointer;
+}
+a.product-upvote:hover, a.product-upvote:focus {
+  text-decoration: none;
 }
