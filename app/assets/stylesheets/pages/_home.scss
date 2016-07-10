@@ -6,7 +6,7 @@
 body{
   background-color:#ECF0F1;
 }
-
+h1{font-family: 'Russo One', sans-serif;}
 .product {
   display: flex;
   align-items: center;
@@ -95,3 +95,19 @@ body{
 .product:hover .product-upvote { transform: scale(1.2) }
 .product:hover .product-controls-hidden a { color: #E6E6E6 }
 .product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
