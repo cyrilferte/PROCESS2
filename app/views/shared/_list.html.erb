@@ -1,20 +1,19 @@
-
-
-
-<div class="container">
+<div class="jumbotron container">
+  <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1 class="text-center"> All products </h1>
+      <h1 class="text-center"> Last products </h1>
       <% @products.each do |product| %>
       <div class="product">
   <div class="upvote-container" id="product-<%= product.id %>">
             <%= render 'upvotes/show', product: product %>
           </div>
+       
  <%= link_to product_path(product) do %>
         <% if product.photo? %>
             <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: 'product-image') %>
           <% else %>
-             <% if product.category == "CFD" %>
+               <% if product.category == "CFD" %>
                   <%= image_tag("cfd.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
               <% elsif product.category == "Food" %>
                   <%= image_tag("food.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
@@ -44,13 +43,15 @@
                   <%= image_tag("IT.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
                       <% elsif product.category == "Energy" %>
                   <%= image_tag("energy.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% else %>
+
+                <% else %>
                   <%= image_tag("back1.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% end %>
+                <% end %>
+
           <% end %>
          <div class='product-body'>
             <h3 class="ttext"><%= product.name %></h3>
-            <p class="ttext"><%= product.tagline %></p>
+           <p class="ttext"><%= product.category %></p>
            <% end %>
           </div>
           <ul class="list-inline product-controls">
@@ -70,4 +71,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>

@@ -1,39 +1,11 @@
 <% if user_signed_in? %>
-    <div class="container">
-
-      <h1 class="text-center">Last product</h1>
-       <% @products.each do |product| %>
-      <div class="product">
-  <div class="upvote-container" id="product-<%= product.id %>">
-            <%= render 'upvotes/show', product: product %>
-          </div>
- <%= link_to product_path(product) do %>
-        <% if product.photo? %>
-            <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: 'product-image') %>
-          <% else %>
-            <img src="http://unsplash.it/300/200" alt="kudoz" class="product-image">
-          <% end %>
-         <div class='product-body'>
-            <h3 class="ttext"><%= product.name %></h3>
-            <p class="ttext"><%= product.tagline %></p>
-           <% end %>
-          </div>
-          <ul class="list-inline product-controls">
-            <li>
-              <%= link_to product_path(product) do %>
-                <i class="fa fa-eye"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to edit_product_path(product) do %>
-                <i class="fa fa-pencil"></i>
-              <% end %>
-            </li>
-
-          </ul>
-        </div>
-      <% end %>
+ <div class="banner" >
+    <div class="banner-content">
+      <h1>New Best Product</h1><br><br><br>
+      <h2>Contactory</h2><br>
+      <%= link_to "GET IT", "http://contactory.co", class: "btn btn-warning btn-lg" %>
     </div>
+  </div>
 
 
 
@@ -42,11 +14,11 @@
 
 
 <% else %>
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('background.jpg');">
+  <div class="banner" >
     <div class="banner-content">
       <h1>PROCESS HUNT</h1>
       <p>FIND BEST ENGINEERING TOOLS</p>
-      <%= link_to "GET IT", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to "GET IT", new_user_registration_path, class: "btn btn-warning btn-lg" %>
     </div>
   </div>
 <% end %>
