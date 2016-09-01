@@ -4,7 +4,7 @@
       <%= f.input :tagline, placeholder: "Short resume", label: "Tagline" %>
       <%= f.input :url, as: :url, label: "URL" %>
       <%= f.input :description, as: :text, placeholder: "long resume", label: "Description" %>
-      <%= f.input :category, collection: ["Analyse_tools", "Biology", "CFD","Chemitry", "DATA_Analytics", "Industrial_design", "Education", "Energy", "Food", "IT", "Material", "Mathematic", "Process_Simulation", "Sizing", "Tech"], prompt:"Category" %>
+      <%= f.input :category, collection: ["Analyse_tools", "Biology", "CFD","Chemistry", "DATA_Analytics", "Industrial_design", "Education", "Energy", "Food", "IT", "Material", "Mathematic", "Process_Simulation", "Sizing", "Tech"], prompt:"Category" %>
       <%= f.input :photo, as: :attachinary %>
       <%= f.button :submit, "ADD", class: "btn btn-primary btn-lg btn-block btn-color" %>
   <% end %>
