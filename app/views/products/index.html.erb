@@ -2,7 +2,7 @@
 <div class="card card-outline-secondary">
   <div class="card-block">
     <h2 class="card-text text-center">Category</h2>
-     <h5 class="card-text"> <%= link_to "Design 3D", products_path(category: "Design_3D"), class: "link-category text-muted" %></h5>
+     <h5 class="card-text"> <%= link_to "Industrial Design", products_path(category: "Industrial_design"), class: "link-category text-muted" %></h5>
      <h5 class="card-text"><%= link_to "CFD", products_path(category: "CFD"), class: "link-category text-muted" %></h5>
      <h5 class="card-text"><%= link_to "Process Simulation", products_path(category: "Process_Simulation"), class: "link-category text-muted" %></h5>
     <h5 class="card-text"><%= link_to "Chemistry", products_path(category: "Chemistry"), class: "link-category text-muted" %></h5>
@@ -33,7 +33,7 @@
                   <%= image_tag("food.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
               <% elsif product.category == "Tech" %>
                   <%= image_tag("IT.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Schema_2D" %>
+              <% elsif product.category == "Industrial_design" %>
                   <%= image_tag("2d.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
               <% elsif product.category == "Process_Simulation" %>
                   <%= image_tag("sim.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
@@ -47,7 +47,7 @@
                   <%= image_tag("chem.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
                       <% elsif product.category == "DATA_Analytics" %>
                   <%= image_tag("data.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Design_3D" %>
+                      <% elsif product.category == "Industrial_design" %>
                   <%= image_tag("3d.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
                       <% elsif product.category == "Material" %>
                   <%= image_tag("mat.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
