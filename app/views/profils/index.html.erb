@@ -1,0 +1,16 @@
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <div class="container index-profil-container">
+  <div class="card--list">
+  <ul>
+        <% @profils.each do |profil| %>
+            <%= link_to profil_path(profil) do %>
+                <li> <%= profil.name %></li>
+            <% end%>
+        <% end%>
+    
+  </ul>
+</div>
+</div>
+<br><br><br><br> 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709213212) do
+ActiveRecord::Schema.define(version: 20161124164904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,37 @@ ActiveRecord::Schema.define(version: 20160709213212) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
+  end
+
+  create_table "profils", force: :cascade do |t|
+    t.string   "name"
+    t.string   "para1"
+    t.string   "para2"
+    t.string   "para3"
+    t.string   "para4"
+    t.string   "para5"
+    t.string   "para6"
+    t.string   "para7"
+    t.string   "author"
+    t.string   "level"
+    t.decimal  "hpara1"
+    t.decimal  "hpara2"
+    t.decimal  "hpara3"
+    t.decimal  "hpara4"
+    t.decimal  "hpara5"
+    t.decimal  "hpara6"
+    t.decimal  "hpara7"
+    t.decimal  "htotal"
+    t.string   "compara1"
+    t.string   "compara2"
+    t.string   "compara3"
+    t.string   "compara4"
+    t.string   "compara5"
+    t.string   "compara6"
+    t.string   "compara7"
+    t.string   "comtotal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "upvotes", force: :cascade do |t|

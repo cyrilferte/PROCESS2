@@ -1,0 +1,38 @@
+<p class ="text-left">
+<%= simple_form_for @profil do |f| %>
+      <%= f.input :name, placeholder: "Name", label: "Product name" %>
+      <%= f.input :level, placeholder: "level", label: "easy, expert" %>
+       <%= f.input :htotal, label: "hours total" %>
+      <%= f.input :comtotal, as: :text, placeholder: "resume", label: "Description" %>
+
+      <%= f.input :para1, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none" %>
+      <%= f.input :hpara1, label: "hours" %>      
+      <%= f.input :compara1, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.input :para2, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none" %>
+      <%= f.input :hpara2, label: "hours" %>      
+      <%= f.input :compara2, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.input :para3, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none" %>
+      <%= f.input :hpara3, label: "hours" %>      
+      <%= f.input :compara3, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.input :para4, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none" %>
+      <%= f.input :hpara4, label: "hours" %>      
+      <%= f.input :compara4, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.input :para5, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none"  %>
+      <%= f.input :hpara5, label: "hours" %>      
+      <%= f.input :compara5, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.input :para6, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none"  %>
+      <%= f.input :hpara6, label: "hours" %>      
+      <%= f.input :compara6, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.input :para7, :collection => @products,:label_method => :name, :value_method => :name,:label => "para" ,:include_blank => false, prompt:"none" %>
+      <%= f.input :hpara7, label: "hours" %>      
+      <%= f.input :compara7, placeholder: "commentaire", label: "commentaire" %>
+      
+      <%= f.button :submit, "ADD", class: "btn btn-primary btn-lg btn-block btn-color" %>
+  <% end %>
+</p>
