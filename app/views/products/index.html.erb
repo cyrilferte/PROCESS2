@@ -1,72 +1,70 @@
-<div class="row">
-<div class="col-xs-11 col-xs-1 col-xs-1 col-lg-2 category-block navi">
-<div class="card card-outline-secondary text-xs-center">
-  <div class="card-block">
-    <h2 class="card-text text-center">Category</h2>
-     <h5 class="card-text"> <%= link_to "Industrial Design", products_path(category: "Industrial_design"), class: "link-category text-muted" %></h5>
-     <h5 class="card-text"><%= link_to "CFD", products_path(category: "CFD"), class: "link-category text-muted" %></h5>
-     <h5 class="card-text"><%= link_to "Process Simulation", products_path(category: "Process_Simulation"), class: "link-category text-muted" %></h5>
-    <h5 class="card-text"><%= link_to "Chemistry", products_path(category: "Chemistry"), class: "link-category text-muted" %></h5>
-    <h5 class="card-text"><%= link_to "Biology", products_path(category: "Biology"), class: "link-category text-muted" %></h5>
-    <h5 class="card-text"><%= link_to "Material", products_path(category: "Material"), class: "link-category text-muted" %></h5>
-    <h5 class="card-text"><%= link_to "Mathematic", products_path(category: "Mathematic"), class: "link-category text-muted" %></h5>
-    <h5 class="card-text"><%= link_to "Education", products_path(category: "Education"), class: "link-category text-muted" %></h5>
-  </div>
-</div>
-</div>
 <div class="container-fluid">
-<div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-9 col-sm-9 ">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-11 col-xs-1 col-xs-1 col-lg-2 category-block navi">
+      <div class="card card-outline-secondary text-xs-center">
+        <div class="card-block">
+          <h2 class="card-text text-center">Category</h2>
+          <h5 class="card-text"> <%= link_to "Industrial Design", products_path(category: "Industrial_design"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "CFD", products_path(category: "CFD"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "Process Simulation", products_path(category: "Process_Simulation"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "Chemistry", products_path(category: "Chemistry"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "Biology", products_path(category: "Biology"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "Material", products_path(category: "Material"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "Mathematic", products_path(category: "Mathematic"), class: "link-category text-muted" %></h5>
+          <h5 class="card-text"><%= link_to "Education", products_path(category: "Education"), class: "link-category text-muted" %></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-8 ">
       <h1 class="text-center"> All products </h1>
       <% @products.each do |product| %>
-      <div class="product">
-  <div class="upvote-container" id="product-<%= product.id %>">
+        <div class="product">
+          <div class="upvote-container" id="product-<%= product.id %>">
             <%= render 'upvotes/show', product: product %>
           </div>
- <%= link_to product_path(product) do %>
-        <% if product.photo? %>
-            <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: 'product-image') %>
-          <% else %>
-             <% if product.category == "CFD" %>
+          <%= link_to product_path(product) do %>
+            <% if product.photo? %>
+              <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: 'product-image') %>
+              <% else %>
+                <% if product.category == "CFD" %>
                   <%= image_tag("cfd.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Food" %>
+                <% elsif product.category == "Food" %>
                   <%= image_tag("food.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Tech" %>
+                <% elsif product.category == "Tech" %>
                   <%= image_tag("IT.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Industrial_design" %>
+                <% elsif product.category == "Industrial_design" %>
                   <%= image_tag("2d.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Process_Simulation" %>
+                <% elsif product.category == "Process_Simulation" %>
                   <%= image_tag("sim.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Sizing" %>
+                <% elsif product.category == "Sizing" %>
                   <%= image_tag("siz.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% elsif product.category == "Mathematic" %>
+                <% elsif product.category == "Mathematic" %>
                   <%= image_tag("math.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Biology" %>
+                <% elsif product.category == "Biology" %>
                   <%= image_tag("bio.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Chemistry" %>
+                <% elsif product.category == "Chemistry" %>
                   <%= image_tag("chem.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "DATA_Analytics" %>
+                <% elsif product.category == "DATA_Analytics" %>
                   <%= image_tag("data.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Industrial_design" %>
+                <% elsif product.category == "Industrial_design" %>
                   <%= image_tag("3d.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Material" %>
+                <% elsif product.category == "Material" %>
                   <%= image_tag("mat.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Education" %>
+                <% elsif product.category == "Education" %>
                   <%= image_tag("edu.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "IT" %>
+                <% elsif product.category == "IT" %>
                   <%= image_tag("IT.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% elsif product.category == "Energy" %>
+                <% elsif product.category == "Energy" %>
                   <%= image_tag("energy.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-                      <% else %>
+                <% else %>
                   <%= image_tag("back1.jpg", height: 117, width: 175, crop: :fill, class: 'product-image') %>
-              <% end %>
-          <% end %>
-         <div class='product-body'>
-            <h3 class="ttext"><%= product.name %></h3>
-            <p class="ttext"><%= product.tagline %></p>
-           <% end %>
-          </div>
+                <% end %>
+            <% end %>
+            <div class='product-body'>
+              <h3 class="ttext"><%= product.name %></h3>
+              <p class="ttext"><%= product.tagline %></p>
+          <% end %></div>
           <ul class="list-inline product-controls">
             <li>
               <%= link_to product_path(product) do %>
@@ -78,14 +76,11 @@
                 <i class="fa fa-pencil"></i>
               <% end %>
             </li>
-
           </ul>
         </div>
       <% end %>
     </div>
+    <div class="col-xs-1"></div>
   </div>
-</div>
-</div>
-
 </div>
 
