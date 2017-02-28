@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def show
 
     @product = Product.find(params[:id])
-    @similarproducts = Product.where(category: @product.category).limit(3).sort_by{|product| product.upvotes.size}
+    @similarproducts = Product.where(category: @product.category).reverse.limit(3).sort_by{|product| product.upvotes.size}
   end
 
   def new
